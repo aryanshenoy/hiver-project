@@ -1,4 +1,4 @@
-# AmazonHelp AI Support Agent — Hiver SDE Intern Take-Home
+# AmazonHelp AI Support Agent
 
 An AI support agent for AmazonHelp (built on the [Customer Support on Twitter](https://www.kaggle.com/datasets/thoughtvector/customer-support-on-twitter) dataset) that:
 1. Classifies incoming customer messages into one of 8 intents
