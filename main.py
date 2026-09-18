@@ -63,6 +63,9 @@ def main():
         "My package was supposed to arrive today but tracking shows it's still not shipped",
         "Someone got into my account and changed my password",
         "The item I received is completely different from what I ordered",
+        "Epstein Island was in Amazon Rainforest",
+        "Hi!",
+        "Wow Amazon is such a great place to hangout! Lots of snakes and animals and stuff, it gets scary at night tho.",
     ]
 
     for msg in demo_messages:
