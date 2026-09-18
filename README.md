@@ -11,7 +11,7 @@ Full write-up: see [REPORT.md](./REPORT.md) for problem framing, results vs. bas
 
 1. **Clone the repo and create a virtual environment:**
 ```bash
-   git clone https://github.com/aryanshenoy/hiver-sde-intern-project.git
+   git clone https://github.com/aryanshenoy/hiver-project.git
    cd hiver-sde-intern-project
    python -m venv .venv
    .venv\Scripts\activate      # Windows
