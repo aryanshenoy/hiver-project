@@ -56,30 +56,31 @@ Exact numbers may vary slightly run-to-run since `llama3.2` isn't fully determin
 
 ## Repo structure
 
-├── main.py # Full pipeline: classify → retrieve → draft → decide
-├── taxonomy.py # The 8 intent categories + definitions
-├── taxonomy.md # Human-readable taxonomy doc + how it was derived
-├── classify.py # LLM-based intent classifier (few-shot, Ollama)
-├── baseline.py # Trivial + TF-IDF baselines
-├── retrieve.py # Finds similar historical threads (TF-IDF similarity)
-├── draft.py # Drafts a reply grounded in retrieved examples
-├── decide.py # Auto-handle vs. escalate policy
-├── judge.py # LLM-as-judge for reply quality
-├── evalClassify.py # Runs classifier + baselines against golden set
-├── evalJudge.py # Runs judge + saves samples for human scoring
-├── data
-    ├── amazon_english_threads.json # Cached, English-filtered AmazonHelp threads
-├── eval
-    ├── golden_set_template.csv # Intermediate scratch file — unlabeled sample before manual labeling (kept for transparency, not used by any script)
-    ├── golden_set_clean.csv # Intermediate scratch file — post encoding/typo-fix 
-    ├── golden_set.csv # 160 hand-labeled examples (see report for sampling method)
-    ├── classification_results.csv # Per-row classifier predictions (for failure analysis)
-    ├── judge_sample.csv # Judge scores + manual human scores (for agreement check)
-├── notebooks
-    ├── main.ipynb # Data prep: thread reconstruction, language filtering, EDA
+```
+├── main.py                    # Full pipeline: classify → retrieve → draft → decide
+├── taxonomy.py                # The 8 intent categories + definitions
+├── taxonomy.md                # Human-readable taxonomy doc + how it was derived
+├── classify.py                # LLM-based intent classifier (few-shot, Ollama)
+├── baseline.py                # Trivial + TF-IDF baselines
+├── retrieve.py                # Finds similar historical threads (TF-IDF similarity)
+├── draft.py                   # Drafts a reply grounded in retrieved examples
+├── decide.py                  # Auto-handle vs. escalate policy
+├── judge.py                   # LLM-as-judge for reply quality
+├── evalClassify.py            # Runs classifier + baselines against golden set
+├── evalJudge.py               # Runs judge + saves samples for human scoring
 ├── decision_log.md
-└── REPORT.md (or this README's Report section)
-
+├── REPORT.md
+├── data/
+│   └── amazon_english_threads.json    # Cached, English-filtered AmazonHelp threads
+├── eval/
+│   ├── golden_set.csv                 # 160 hand-labeled examples — the real deliverable
+│   ├── golden_set_template.csv        # Scratch: unlabeled sample before manual labeling (kept for transparency)
+│   ├── golden_set_clean.csv           # Scratch: post encoding/typo-fix pass, pre-filtering (kept for transparency)
+│   ├── classification_results.csv     # Per-row classifier predictions (failure analysis)
+│   └── judge_sample.csv               # Judge scores + manual human scores (agreement check)
+└── notebooks/
+    └── main.ipynb              # Data prep: thread reconstruction, language filtering, EDA
+```
 
 ## Why AmazonHelp
 
